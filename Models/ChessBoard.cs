@@ -4,6 +4,7 @@
     {
         public const int boardSize = 8;
         public List<ChessFile> files { get; set; }
+
         public ChessBoard()
         {
             //TODO override to strings to print out a chess board
@@ -15,5 +16,11 @@
                 this.files.Add(new ChessFile());
             }
         }
+
+
+        public override string ToString()
+            {
+                return "┌─┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐";
+            }
     }
 }

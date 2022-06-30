@@ -7,6 +7,7 @@ namespace CSharpChess
         static void Main(string[] args)
         {
             ChessBoard chessBoard = new ChessBoard();
+            Console.WriteLine(chessBoard);
         }
     }
 }

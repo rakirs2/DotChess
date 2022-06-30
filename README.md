@@ -10,3 +10,9 @@
 2. print board
 3. create piece class -- try predicting needed field
 4. create pawns
+
+##Template from daily programmer reddit
+
+https://www.reddit.com/r/dailyprogrammer/comments/3t9lar/20151118_challenge_241_intermediate_ascii_bitmap/
+
+
