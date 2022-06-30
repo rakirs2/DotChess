@@ -6,5 +6,7 @@
 * try to limit comments
 
 ##Todos
-1. start with a board
+1. create a board
 2. print board
+3. create piece class -- try predicting needed field
+4. create pawns

@@ -1,4 +1,6 @@
-﻿namespace CSharpChess
+﻿using CSharpChess.Models;
+
+namespace CSharpChess
 {
     internal class Program
     {
