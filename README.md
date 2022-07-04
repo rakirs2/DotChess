@@ -6,6 +6,7 @@
 * try to limit comments
 
 ##Todos
+
 [x] create a board
 [x] print board
 [] print board by square
