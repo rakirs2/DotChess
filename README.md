@@ -6,10 +6,11 @@
 * try to limit comments
 
 ##Todos
-1. create a board
-2. print board
-3. create piece class -- try predicting needed field
-4. create pawns
+[x] create a board
+[x] print board
+[] print board by square
+[] create piece class -- try predicting needed field
+[] create pawns
 
 ##Template from daily programmer reddit
 
