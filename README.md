@@ -1,17 +1,17 @@
 # CSharpChess
 
-##Invariants
-* every piece/object should be derived from something else
+## Invariants
+* every piece/object should be derived from something else?
 * have tests sth any code change breaks tests?
 * try to limit comments
 
-##Todos
+## Todos
 
-[x] create a board
-[x] print board
-[] print board by square
-[] create piece class -- try predicting needed field
-[] create pawns
+- [x] create a board
+- [x] print board
+- [ ] print board by square
+- [ ] create piece class -- try predicting needed field
+- [ ] create pawns
 
 ##Template from daily programmer reddit
 

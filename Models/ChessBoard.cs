@@ -2,18 +2,19 @@
 {
     public class ChessBoard
     {
-        public const int boardSize = 8;
-        public List<ChessFile> files { get; set; }
+        public const int BoardSize = 8;
+        //TODO see if i can get away w/ array
+        public List<ChessFile> Files { get; set; }
 
         public ChessBoard()
         {
             //TODO override to strings to print out a chess board
 
-            this.files = new List<ChessFile>(boardSize);
+            this.Files = new List<ChessFile>(BoardSize);
 
-            for (int i = 0; i < boardSize; i++)
+            for (var i = 0; i < BoardSize; i++)
             {
-                this.files.Add(new ChessFile());
+                this.Files.Add(new ChessFile());
             }
         }
 
@@ -38,7 +39,7 @@
                             "│1│.....│     │.....│     │.....│     │.....│     │\n" +
                             "├─┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤\n" +
                             "│ │  a  │  b  │  c  │  d  │  e  │  f  │  g  │  h  │\n" +
-                            "└─┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘\n"; 
+                            "└─┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘\n" ; 
                 return output;
             }
     }

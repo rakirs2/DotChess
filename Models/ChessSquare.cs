@@ -13,6 +13,11 @@ namespace CSharpChess.Models
 
             this.occupied = false;
         }
+        public ChessSquare()
+        {
+
+            this.occupied = false;
+        }
 
         private char fileToLetter(int file)
         {
