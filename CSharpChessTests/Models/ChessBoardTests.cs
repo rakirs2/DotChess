@@ -16,8 +16,8 @@ namespace CSharpChess.Tests
         public void ChessBoardDimensions()
         {
             ChessBoard board = new ChessBoard();
-            Assert.AreEqual(board.Files.Count, 8);
-            Assert.AreEqual(board.Files[0].ranks.Count, 8);
+            Assert.AreEqual(board.Files.Length, 8);
+            Assert.AreEqual(board.Files[0].ranks.Length, 8);
         }
     }
 }

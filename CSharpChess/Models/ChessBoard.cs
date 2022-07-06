@@ -3,18 +3,17 @@
     public class ChessBoard
     {
         public const int BoardSize = 8;
-        //TODO see if i can get away w/ array
-        public List<ChessFile> Files { get; set; }
+        public ChessFile[] Files { get; set; }
 
         public ChessBoard()
         {
             //TODO override to strings to print out a chess board
 
-            this.Files = new List<ChessFile>(BoardSize);
+            this.Files = new ChessFile[8];
 
             for (var i = 0; i < BoardSize; i++)
             {
-                this.Files.Add(new ChessFile());
+                this.Files[i]=new ChessFile();
             }
         }
 
