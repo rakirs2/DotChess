@@ -4,17 +4,26 @@ namespace CSharpChess.Models
 {
     public class ChessSquare
     {
-        public Boolean occupied { get; set; }
+        public  bool Occupied { get; set; }
+        public bool IsBlack { get; set; }
+
+        
 
         public ChessSquare(int file, int rank)
         {
-
-            this.occupied = false;
+            Occupied = false;
+            IsBlack = false;
         }
         public ChessSquare()
         {
-            this.occupied = false;
+            Occupied = false;
+            IsBlack= false;
+            
         }
 
+        public override string ToString()
+        {
+            return IsBlack ? "....." : "     ";
+        }
     }
 }

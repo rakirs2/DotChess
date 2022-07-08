@@ -9,6 +9,7 @@
 
 - [x] create a board
 - [x] print board
+- [] convert from files to ranks 
 - [ ] print board by square
 - [ ] create piece class -- try predicting needed field
 - [ ] create pawns
