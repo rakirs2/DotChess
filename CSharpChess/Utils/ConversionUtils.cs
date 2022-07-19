@@ -2,8 +2,9 @@
 
 public class ConversionUtils
 {
-    int RankToArrayIndexNumber(char rank)
+    public static int RankToArrayIndexNumber(char rank)
     {
-        return 0;
+        
+        return (int) rank -97;
     }
 }

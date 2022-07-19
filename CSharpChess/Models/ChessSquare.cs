@@ -12,7 +12,7 @@ namespace CSharpChess.Models
         public ChessSquare(int rank, int file)
         {
             Occupied = false;
-            IsBlack = false;
+            IsBlack = rank+file%2==0;
 
         }
         public ChessSquare()
