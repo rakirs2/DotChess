@@ -43,5 +43,7 @@ namespace CSharpChess.Tests
                                     "│ │  a  │  b  │  c  │  d  │  e  │  f  │  g  │  h  │\n" +
                                     "└─┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘\n", board.ToString());
         }
+
+        
     }
 }
