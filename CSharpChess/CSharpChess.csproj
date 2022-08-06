@@ -11,6 +11,10 @@
     <Compile Remove="Test\**" />
     <EmbeddedResource Remove="Test\**" />
     <None Remove="Test\**" />
+    <None Remove="Pieces\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pieces\" />
+  </ItemGroup>
 </Project>
