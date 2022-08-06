@@ -14,8 +14,6 @@
 - [ ] create piece class -- try predicting needed field
 - [ ] create pawns
 
-##Template from daily programmer reddit
-
-https://www.reddit.com/r/dailyprogrammer/comments/3t9lar/20151118_challenge_241_intermediate_ascii_bitmap/
-
-
+## Real Todos
+I realized my approach wasn't really getting anywhere. Instead, I'm going to start with all of the pieces, just keep track of the pieces --> basically track changes and store the info about move possibilities within the pieces
+- instantiate pieces in a hashmap or a 
