@@ -23,33 +23,68 @@ namespace CSharpChess.Pieces.Tests
             Assert.AreEqual(randomFile, king.GetPosition().File);
         }
 
-        //TODO.Srikar add a position object/overload hashcode/equals
-        //what is wrong with this? --> hashset uses hashcode; for arrays it is just the pointer.
         [TestMethod()]
         public void GetPossibleMovesTest()
         {
             King king = new King(4, 4);
             HashSet<Position> expectedMoves = new HashSet<Position>
             {
-                new Position( 5, 5 ),
-                new Position( 5, 4 ),
-                new Position( 5, 3 ),
-                new Position( 4, 5 ),
-                new Position( 4, 3 ),
-                new Position( 3, 5 ),
-                new Position( 3, 4 ),
-                new Position( 3, 3 )
+                new ( 5, 5 ),
+                new ( 5, 4 ),
+                new ( 5, 3 ),
+                new ( 4, 5 ),
+                new ( 4, 3 ),
+                new ( 3, 5 ),
+                new ( 3, 4 ),
+                new ( 3, 3 )
             };
             HashSet<Position> actualMoves = king.GetPossibleMoves();
-        
-            foreach (var position in expectedMoves)
+            //TODO.Srikar there has to be a better way
+            foreach (Position move in actualMoves)
             {
-                Assert.IsTrue(actualMoves.Contains(position));
+                expectedMoves.Remove(move);
             }
-            foreach(var position in actualMoves)
+
+            Assert.IsTrue(expectedMoves.Count == 0);
+        }
+        [TestMethod()]
+        public void GetPossibleMovesCornerTest()
+        {
+            King king = new King(0, 0);
+            HashSet<Position> expectedMoves = new HashSet<Position>
             {
-                Assert.IsTrue(expectedMoves.Contains(position));
+                new ( 1, 0 ),
+                new ( 0, 1 ),
+                new ( 1, 1 )
+            };
+            HashSet<Position> actualMoves = king.GetPossibleMoves();
+            //TODO.Srikar there has to be a better way
+            foreach (Position move in actualMoves)
+            {
+                expectedMoves.Remove(move);
             }
+
+            Assert.IsTrue(expectedMoves.Count == 0);
+        }
+        public void GetPossibleMovesEdgeTest()
+        {
+            King king = new King(0, 2);
+            HashSet<Position> expectedMoves = new HashSet<Position>
+            {
+                new ( 0, 3 ),
+                new ( 0, 1 ),
+                new ( 1, 1 ),
+                new ( 1, 2 ),
+                new ( 1, 3)
+            };
+            HashSet<Position> actualMoves = king.GetPossibleMoves();
+            //TODO.Srikar there has to be a better way
+            foreach (Position move in actualMoves)
+            {
+                expectedMoves.Remove(move);
+            }
+
+            Assert.IsTrue(expectedMoves.Count == 0);
         }
     }
 }
