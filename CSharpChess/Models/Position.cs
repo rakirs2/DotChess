@@ -8,8 +8,8 @@ namespace CSharpChess.Models
 {
     public class Position
     {
-        public int Rank { get; set; }
-        public int File { get; set; }
+        public int Rank { get;  }
+        public int File { get; }
 
         public Position(int rank, int file)
         {
@@ -19,16 +19,17 @@ namespace CSharpChess.Models
 
         public override bool Equals(object? obj)
         {
-            if (obj is Position)
+
+            if (obj is Position position)
             {
-                return File == ((Position)obj).File && Rank == ((Position)obj).Rank;
+                return File == position.File && Rank == position.Rank;
             }
             return false;
         }
 
         public override int GetHashCode()
         {
-            return Rank ^File;
+            return Rank ^ File;
         }
     }
 }

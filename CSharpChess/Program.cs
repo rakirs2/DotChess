@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using CSharpChess.Pieces;
 
 Console.WriteLine("Let's play chess");
-PieceTracker pieceTracker = new();
+
 
 
 
