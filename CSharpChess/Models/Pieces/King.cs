@@ -9,14 +9,18 @@ namespace CSharpChess.Pieces
     {
 
         protected Position position { get; set; }
-        public King(int rank, int file)
+        public Color color { get; set; }
+        public King(int rank, int file, Color color)
         {
             position = new Position(rank, file);
+            this.color = color;
         }
+
 
         public HashSet<Position> GetPossibleMoves()
         {
             HashSet<Position> possibleMoves = new HashSet<Position>();
+            //TODO.Srikar simpilify this?
             if (IsOnBoard(position.Rank + 1, position.File + 1))
             {
                 possibleMoves.Add(new Position(position.Rank + 1, position.File + 1));
@@ -61,6 +65,11 @@ namespace CSharpChess.Pieces
         public Position GetPosition()
         {
             return position;
+        }
+
+        Color IPiece.GetColor()
+        {
+            return this.color;
         }
     }
 }
