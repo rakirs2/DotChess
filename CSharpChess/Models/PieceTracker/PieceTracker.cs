@@ -14,5 +14,6 @@ namespace CSharpChess.Pieces
         {
             pieces = new Dictionary<int[], IPiece>();
         }
+        
     }
 }

@@ -18,17 +18,16 @@ namespace CSharpChess.Pieces.Tests
             Random random = new Random();
             int randomRank = random.Next(0, 8);
             int randomFile = random.Next(0, 8);
-            King king = new King(randomRank, randomFile);
+            King king = new King(randomRank, randomFile, Color.Black);
             Assert.AreEqual(randomRank, king.GetPosition().Rank);
             Assert.AreEqual(randomFile, king.GetPosition().File);
+            Assert.AreEqual(Color.Black, king.color);
         }
 
-        //TODO.Srikar add a position object/overload hashcode/equals
-        //what is wrong with this? --> hashset uses hashcode; for arrays it is just the pointer.
         [TestMethod()]
         public void GetPossibleMovesTest()
         {
-            King king = new King(4, 4);
+            King king = new King(4, 4, Color.White);
             HashSet<Position> expectedMoves = new HashSet<Position>
             {
                 new Position( 5, 5 ),
