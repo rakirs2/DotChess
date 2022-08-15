@@ -9,5 +9,20 @@ namespace CSharpChess
         Color GetColor();
         PieceType GetPieceType();
     }
+    public enum Color{
+        Black,
+        White
+    }
+
+    public enum PieceType
+    {
+        King,
+        Queen,
+        Rook,
+        Bishop,
+        Knight,
+        Pawn
+        
+    }
 }
 
