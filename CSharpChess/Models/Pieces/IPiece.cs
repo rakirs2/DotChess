@@ -1,4 +1,8 @@
-﻿namespace CSharpChess.Models.Pieces
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("CSharpChessTests")]
+
+namespace CSharpChess.Models.Pieces
 {
     public interface IPiece
     {

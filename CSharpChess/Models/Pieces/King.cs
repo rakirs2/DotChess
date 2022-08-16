@@ -6,7 +6,7 @@ using Microsoft.VisualBasic;
 
 namespace CSharpChess.Pieces
 {
-    public class King : IPiece
+    internal class King : IPiece
     {
         public Color Color { get; }
         public PieceType PieceType { get; }

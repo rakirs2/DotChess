@@ -1,9 +1,11 @@
-﻿using CSharpChess.Models;
+﻿
+using CSharpChess.Models;
 using CSharpChess.Models.Pieces;
+using System.Runtime.CompilerServices;
 
 namespace CSharpChess.PieceTracker;
 
-public interface IPieceTracker
+internal interface IPieceTracker
 {
     HashSet<Position> GetOccupiedPositions();
     HashSet<Position> GetOccupiedPositionsByColor(Color color);
