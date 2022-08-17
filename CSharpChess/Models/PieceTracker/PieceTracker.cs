@@ -42,12 +42,5 @@ namespace CSharpChess.Models.PieceTracker
             }
         }
 
-        //public HashSet<Position> GetPossibleMoves(Position position)
-        //{
-        //    HashSet<Position> possibleMoves = new HashSet<Position>();
-        //    //TODO Srikar.M Ask Mike for the best way to do this.
-
-        //}
-
     }
 }
