@@ -11,7 +11,7 @@ namespace CSharpChess.Pieces
         public Color Color { get; }
         public PieceType PieceType { get; }
 
-        public King (Color color)
+        public King(Color color)
         {
             Color = color;
             PieceType = PieceType.King;

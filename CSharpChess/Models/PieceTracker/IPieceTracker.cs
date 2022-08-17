@@ -5,11 +5,12 @@ using System.Runtime.CompilerServices;
 
 namespace CSharpChess.PieceTracker;
 
-internal interface IPieceTracker
+public interface IPieceTracker
 {
-    HashSet<Position> GetOccupiedPositions();
-    HashSet<Position> GetOccupiedPositionsByColor(Color color);
-    HashSet<Position> GetPossibleMoves(Position position);
+    public HashSet<Position> GetOccupiedPositions();
+    public Boolean AddPiece(Position position, IPiece piece);
+    //HashSet<Position> GetOccupiedPositionsByColor(Color color);
+    //HashSet<Position> GetPossibleMoves(Position position);
 }
 
 //public HashSet<Position> GetPossibleMoves()

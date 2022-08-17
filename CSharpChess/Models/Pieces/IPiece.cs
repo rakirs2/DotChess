@@ -11,7 +11,8 @@ namespace CSharpChess.Models.Pieces
         public PieceType PieceType { get; }
 
     }
-    public enum Color{
+    public enum Color
+    {
         Black,
         White
     }
@@ -24,7 +25,7 @@ namespace CSharpChess.Models.Pieces
         Bishop,
         Knight,
         Pawn
-        
+
     }
 }
 

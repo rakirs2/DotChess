@@ -14,7 +14,4 @@
     <None Remove="Pieces\" />
     <None Remove="Models\PieceTracker\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\PieceTracker\" />
-  </ItemGroup>
 </Project>
