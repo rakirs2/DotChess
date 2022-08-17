@@ -26,7 +26,7 @@ namespace CSharpChess.Models.PieceTracker.Tests
             King BlackKing = new King(Pieces.Color.Black);
             Position position = new Position(7, 4);
             pieceTracker.AddPiece(position, BlackKing);
-            
+
             Assert.AreEqual(1, pieceTracker.GetOccupiedPositions().Count);
         }
         [TestMethod()]

@@ -6,15 +6,25 @@ using Microsoft.VisualBasic;
 
 namespace CSharpChess.Pieces
 {
-    internal class King : IPiece
+    public class King : IPiece
     {
-        public Color Color { get; }
-        public PieceType PieceType { get; }
+        private readonly Color _color;
+        private readonly PieceType _pieceType;
 
         public King(Color color)
         {
-            Color = color;
-            PieceType = PieceType.King;
+            _color = color;
+            _pieceType = PieceType.King;
+        }
+
+        public Color GetColor()
+        {
+            return _color;
+        }
+
+        public PieceType GetPieceType()
+        {
+            return _pieceType;
         }
     }
 }

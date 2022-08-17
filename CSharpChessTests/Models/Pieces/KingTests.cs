@@ -18,9 +18,9 @@ namespace CSharpChess.Pieces.Tests
         {
             King Black = new(Color.Black);
             King White = new(Color.White);
-            Assert.AreEqual(Black.PieceType, PieceType.King);
-            Assert.AreEqual(Black.PieceType, White.PieceType);
-            Assert.AreEqual(Black.Color, Color.Black);
+            Assert.AreEqual(Black.GetPieceType(), PieceType.King);
+            Assert.AreEqual(Black.GetPieceType(), White.GetPieceType());
+            Assert.AreEqual(Black.GetColor(), Color.Black);
 
         }
     }
