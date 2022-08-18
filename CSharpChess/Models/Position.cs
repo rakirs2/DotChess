@@ -13,8 +13,18 @@ namespace CSharpChess.Models
 
         public Position(int rank, int file)
         {
-            this.Rank = rank;
-            this.File = file;
+            if (BoardUtils.IsOnBoard(rank, file))
+            {
+                //horizontal lines
+                Rank = rank;
+                //vertical lines
+                File = file;
+            }
+            else
+            {
+                throw new Exception("Not on board");
+            }
+            
         }
 
         public override bool Equals(object? obj)

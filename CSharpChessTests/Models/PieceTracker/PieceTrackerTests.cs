@@ -23,8 +23,9 @@ namespace CSharpChess.Models.PieceTracker.Tests
         public void SinglePieceOnBoard()
         {
             PieceTracker pieceTracker = new PieceTracker();
-            King BlackKing = new King(Pieces.Color.Black);
             Position position = new Position(7, 4);
+            King BlackKing = new King(Pieces.Color.Black, position);
+            
             pieceTracker.AddPiece(position, BlackKing);
 
             Assert.AreEqual(1, pieceTracker.GetOccupiedPositions().Count);
@@ -33,11 +34,13 @@ namespace CSharpChess.Models.PieceTracker.Tests
         public void TwoPiecesOnBoard()
         {
             PieceTracker pieceTracker = new PieceTracker();
-            King BlackKing = new King(Pieces.Color.Black);
             Position position1 = new Position(1, 4);
+            King BlackKing = new King(Pieces.Color.Black, position1);
+            
             pieceTracker.AddPiece(position1, BlackKing);
-            King WhiteKing = new King(Pieces.Color.White);
             Position position2 = new Position(0, 4);
+            King WhiteKing = new King(Pieces.Color.White, position2);
+            
             pieceTracker.AddPiece(position2, WhiteKing);
 
 
