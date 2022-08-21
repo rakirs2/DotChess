@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using CSharpChess.Pieces;
 using CSharpChess.Models;
 
-namespace CSharpChessChessTests.Models.Pieces
+namespace CSharpChessTests.Models.Pieces
 {
     [TestClass()]
     public class KnightTests
