@@ -28,7 +28,7 @@ namespace CSharpChess.Models.Pieces.Tests
         public void GetPossibleMovesTestCenter()
         {
             Knight black = new(Color.Black, new Position(3, 3));
-            HashSet<Position> possibleMoves = black.GetPossibleMoves();
+            var possibleMoves = black.GetPossibleMoves();
             HashSet<Position> expectedMoves = new()
             {
                 new Position(5, 4),
@@ -36,22 +36,12 @@ namespace CSharpChess.Models.Pieces.Tests
                 new Position(2, 5),
                 new Position(1, 4),
                 new Position(1, 2),
+
+                new Position(2, 1),
                 new Position(4, 1),
                 new Position(5, 2),
-                new Position(4, 1)
             };
             Assert.IsTrue(possibleMoves.SetEquals(expectedMoves));
-        }
-
-        [TestMethod()]
-        public void GetPossibleMovesTest3Options()
-        {
-            Assert.Fail();
-        }
-        [TestMethod()]
-        public void GetPossibleMovesTestCorner()
-        {
-            Assert.Fail();
         }
 
     }
