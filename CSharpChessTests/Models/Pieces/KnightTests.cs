@@ -6,8 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CSharpChess.Pieces;
+using CSharpChess.Models;
 
-namespace CSharpChess.Models.Pieces.Tests
+namespace CSharpChessChessTests.Models.Pieces
 {
     [TestClass()]
     public class KnightTests
@@ -43,6 +44,31 @@ namespace CSharpChess.Models.Pieces.Tests
             };
             Assert.IsTrue(possibleMoves.SetEquals(expectedMoves));
         }
-
+        [TestMethod()]
+        public void GetPossibleMovesTestCorner()
+        {
+            Knight black = new(Color.Black, new Position(0, 0));
+            var possibleMoves = black.GetPossibleMoves();
+            HashSet<Position> expectedMoves = new()
+            {
+                new Position(1, 2),
+                new Position(2, 1)
+            };
+            Assert.IsTrue(possibleMoves.SetEquals(expectedMoves));
+        }
+        [TestMethod()]
+        public void GetPossibleMovesTestSideFour()
+        {
+            Knight black = new(Color.Black, new Position(0, 3));
+            var possibleMoves = black.GetPossibleMoves();
+            HashSet<Position> expectedMoves = new()
+            {
+                new Position(1, 5),
+                new Position(2, 4),
+                new Position(2, 2),
+                new Position(1, 1)
+            };
+            Assert.IsTrue(possibleMoves.SetEquals(expectedMoves));
+        }
     }
 }
