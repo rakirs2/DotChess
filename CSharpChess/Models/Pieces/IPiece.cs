@@ -13,6 +13,7 @@ namespace CSharpChess.Models.Pieces
         //The default is vertical clockwise
         HashSet<Position> GetPossibleMoves();
         Position GetCurrentPosition();
+        
     }
     public enum Color
     {
