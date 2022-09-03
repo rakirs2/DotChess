@@ -1,10 +1,5 @@
 ﻿using CSharpChess.Models.Pieces;
 using CSharpChess.PieceTracker;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharpChess.Models.PieceTracker
 {

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharpChess.Models
+﻿namespace CSharpChess.Models
 {
     public class Position
     {
-        public int Rank { get;  }
+        public int Rank { get; }
         public int File { get; }
 
         public Position(int rank, int file)
@@ -24,7 +18,7 @@ namespace CSharpChess.Models
             {
                 throw new Exception("Not on board");
             }
-            
+
         }
 
         public override bool Equals(object? obj)

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharpChess.Models.Pieces
+﻿namespace CSharpChess.Models.Pieces
 {
     public class Knight : IPiece
     {
@@ -37,19 +31,19 @@ namespace CSharpChess.Models.Pieces
             //assuming 3,3
             HashSet<Position> possibleMoves = new HashSet<Position>();
             //5,4
-            if (BoardUtils.IsOnBoard(_position.Rank + 2, _position.File +1))
+            if (BoardUtils.IsOnBoard(_position.Rank + 2, _position.File + 1))
             {
-                possibleMoves.Add(new Position(_position.Rank + 2, _position.File +1));
+                possibleMoves.Add(new Position(_position.Rank + 2, _position.File + 1));
             }
             //4,5
             if (BoardUtils.IsOnBoard(_position.Rank + 1, _position.File + 2))
             {
-                possibleMoves.Add(new Position(_position.Rank +1, _position.File + 2));
+                possibleMoves.Add(new Position(_position.Rank + 1, _position.File + 2));
             }
             //2,5
-            if (BoardUtils.IsOnBoard(_position.Rank-1, _position.File + 2))
+            if (BoardUtils.IsOnBoard(_position.Rank - 1, _position.File + 2))
             {
-                possibleMoves.Add(new Position(_position.Rank-1, _position.File + 2));
+                possibleMoves.Add(new Position(_position.Rank - 1, _position.File + 2));
             }
             //1,4
             if (BoardUtils.IsOnBoard(_position.Rank - 2, _position.File + 1))
@@ -57,9 +51,9 @@ namespace CSharpChess.Models.Pieces
                 possibleMoves.Add(new Position(_position.Rank - 2, _position.File + 1));
             }
             //1,2
-            if (BoardUtils.IsOnBoard(_position.Rank - 2, _position.File -1))
+            if (BoardUtils.IsOnBoard(_position.Rank - 2, _position.File - 1))
             {
-                possibleMoves.Add(new Position(_position.Rank - 2, _position.File-1));
+                possibleMoves.Add(new Position(_position.Rank - 2, _position.File - 1));
             }
             //2,1
             if (BoardUtils.IsOnBoard(_position.Rank - 1, _position.File - 2))
@@ -67,9 +61,9 @@ namespace CSharpChess.Models.Pieces
                 possibleMoves.Add(new Position(_position.Rank - 1, _position.File - 2));
             }
             //4,1
-            if (BoardUtils.IsOnBoard(_position.Rank+1, _position.File - 2))
+            if (BoardUtils.IsOnBoard(_position.Rank + 1, _position.File - 2))
             {
-                possibleMoves.Add(new Position(_position.Rank+1, _position.File - 2));
+                possibleMoves.Add(new Position(_position.Rank + 1, _position.File - 2));
             }
             //5,2
             if (BoardUtils.IsOnBoard(_position.Rank + 2, _position.File - 1))

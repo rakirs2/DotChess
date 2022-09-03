@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("CSharpChessTests")]
 
@@ -13,7 +12,7 @@ namespace CSharpChess.Models.Pieces
         //The default is vertical clockwise
         HashSet<Position> GetPossibleMoves();
         Position GetCurrentPosition();
-        
+
     }
     public enum Color
     {

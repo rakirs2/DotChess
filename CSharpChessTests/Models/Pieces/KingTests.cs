@@ -1,13 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSharpChess.Pieces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CSharpChess.Models;
+﻿using CSharpChess.Models;
 using CSharpChess.Models.Pieces;
-using static CSharpChess.Models.Pieces.Color;
+using CSharpChess.Pieces;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSharpChessTests.Models.Pieces;
 

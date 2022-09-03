@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharpChess.Models.Pieces
+﻿namespace CSharpChess.Models.Pieces
 {
     public class Bishop : IPiece
     {
@@ -69,7 +63,7 @@ namespace CSharpChess.Models.Pieces
             while (BoardUtils.IsOnBoard(current.Rank + 1, current.File - 1))
             {
                 possibleMoves.Add(new Position(current.Rank + 1, current.File - 1));
-                current = new Position(current.Rank + 1, current.File -1);
+                current = new Position(current.Rank + 1, current.File - 1);
             }
 
             return possibleMoves;

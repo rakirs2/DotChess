@@ -1,7 +1,6 @@
 ﻿
 using CSharpChess.Models;
 using CSharpChess.Models.Pieces;
-using System.Runtime.CompilerServices;
 
 namespace CSharpChess.PieceTracker;
 
