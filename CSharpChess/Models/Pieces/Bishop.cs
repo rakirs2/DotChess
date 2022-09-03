@@ -43,6 +43,8 @@ namespace CSharpChess.Models.Pieces
             while (BoardUtils.IsOnBoard(current.Rank + 1, current.File + 1))
             {
                 possibleMoves.Add(new Position(current.Rank + 1, current.File + 1));
+                current = new Position(current.Rank + 1, current.File + 1);
+
             }
             //3,4
             current = _position;
@@ -52,6 +54,7 @@ namespace CSharpChess.Models.Pieces
             while (BoardUtils.IsOnBoard(current.Rank - 1, current.File + 1))
             {
                 possibleMoves.Add(new Position(current.Rank - 1, current.File + 1));
+                current = new Position(current.Rank - 1, current.File + 1);
             }
             //2,3
 
@@ -59,12 +62,14 @@ namespace CSharpChess.Models.Pieces
             while (BoardUtils.IsOnBoard(current.Rank - 1, current.File - 1))
             {
                 possibleMoves.Add(new Position(current.Rank - 1, current.File - 1));
+                current = new Position(current.Rank - 1, current.File - 1);
             }
             //4,2
             current = _position;
             while (BoardUtils.IsOnBoard(current.Rank + 1, current.File - 1))
             {
                 possibleMoves.Add(new Position(current.Rank + 1, current.File - 1));
+                current = new Position(current.Rank + 1, current.File -1);
             }
 
             return possibleMoves;
