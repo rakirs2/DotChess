@@ -14,7 +14,7 @@ namespace CSharpChess.Models.Pieces
         public Bishop(Color color, Position position)
         {
             _color = color;
-            _pieceType = PieceType.Knight;
+            _pieceType = PieceType.Bishop;
             _position = position;
         }
         public Color GetColor()
@@ -33,50 +33,38 @@ namespace CSharpChess.Models.Pieces
         }
 
         public HashSet<Position> GetPossibleMoves()
-        //TODO.Srikar implement
         {
-            //assuming 3,3
+            //TODO.Srikar consider simplifying this logic and adding it to other piece movements
             HashSet<Position> possibleMoves = new HashSet<Position>();
-            //5,4
+            var current = _position;
 
-            if (BoardUtils.IsOnBoard(_position.Rank + 2, _position.File +1))
+            //4,4
+            current = _position;
+            while (BoardUtils.IsOnBoard(current.Rank + 1, current.File + 1))
             {
-                possibleMoves.Add(new Position(_position.Rank + 2, _position.File +1));
+                possibleMoves.Add(new Position(current.Rank + 1, current.File + 1));
             }
-            //4,5
-            if (BoardUtils.IsOnBoard(_position.Rank + 1, _position.File + 2))
+            //3,4
+            current = _position;
+
+            //2,4
+            current = _position;
+            while (BoardUtils.IsOnBoard(current.Rank - 1, current.File + 1))
             {
-                possibleMoves.Add(new Position(_position.Rank +1, _position.File + 2));
+                possibleMoves.Add(new Position(current.Rank - 1, current.File + 1));
             }
-            if (BoardUtils.IsOnBoard(_position.Rank-1, _position.File + 2))
+            //2,3
+
+            current = _position;
+            while (BoardUtils.IsOnBoard(current.Rank - 1, current.File - 1))
             {
-                possibleMoves.Add(new Position(_position.Rank-1, _position.File + 2));
+                possibleMoves.Add(new Position(current.Rank - 1, current.File - 1));
             }
-            //1,4
-            if (BoardUtils.IsOnBoard(_position.Rank - 2, _position.File + 1))
+            //4,2
+            current = _position;
+            while (BoardUtils.IsOnBoard(current.Rank + 1, current.File - 1))
             {
-                possibleMoves.Add(new Position(_position.Rank - 2, _position.File + 1));
-            }
-            //1,2
-            if (BoardUtils.IsOnBoard(_position.Rank - 2, _position.File -1))
-            {
-                possibleMoves.Add(new Position(_position.Rank - 2, _position.File-1));
-            }
-            //2,1
-            if (BoardUtils.IsOnBoard(_position.Rank - 1, _position.File - 2))
-            {
-                possibleMoves.Add(new Position(_position.Rank - 1, _position.File - 2));
-            }
-            //4,1
-            if (BoardUtils.IsOnBoard(_position.Rank+1, _position.File - 2))
-            {
-                possibleMoves.Add(new Position(_position.Rank+1, _position.File - 2));
-            }
-            //5,2
-            //2,5
-            if (BoardUtils.IsOnBoard(_position.Rank + 2, _position.File - 1))
-            {
-                possibleMoves.Add(new Position(_position.Rank + 2, _position.File - 1));
+                possibleMoves.Add(new Position(current.Rank + 1, current.File - 1));
             }
 
             return possibleMoves;

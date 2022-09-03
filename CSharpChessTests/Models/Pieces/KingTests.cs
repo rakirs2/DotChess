@@ -9,8 +9,9 @@ using CSharpChess.Models;
 using CSharpChess.Models.Pieces;
 using static CSharpChess.Models.Pieces.Color;
 
-namespace CSharpChess.Pieces.Tests;
+namespace CSharpChessTests.Models.Pieces;
 
+//TODO.Srikar implement with disposable?
 [TestClass()]
 public class KingTests
 {
