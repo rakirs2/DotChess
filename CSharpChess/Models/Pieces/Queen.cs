@@ -1,14 +1,14 @@
 ﻿namespace CSharpChess.Models.Pieces
 {
-    public class Bishop : IPiece
+    public class Queen : IPiece
     {
         private readonly Color _color;
         private readonly PieceType _pieceType;
         private Position _position;
-        public Bishop(Color color, Position position)
+        public Queen(Color color, Position position)
         {
             _color = color;
-            _pieceType = PieceType.Bishop;
+            _pieceType = PieceType.Queen;
             _position = position;
         }
         public Color GetColor()
@@ -28,37 +28,53 @@
 
         public HashSet<Position> GetPossibleMoves()
         {
-            //TODO.Srikar these should honestly be template methods
             HashSet<Position> possibleMoves = new HashSet<Position>();
             var current = _position;
-
-            //4,4
-            current = _position;
+            
             while (BoardUtils.IsOnBoard(current.Rank + 1, current.File + 1))
             {
                 possibleMoves.Add(new Position(current.Rank + 1, current.File + 1));
                 current = new Position(current.Rank + 1, current.File + 1);
 
             }
-            //3,4
-            current = _position;
-
-            //2,4
             current = _position;
             while (BoardUtils.IsOnBoard(current.Rank - 1, current.File + 1))
             {
                 possibleMoves.Add(new Position(current.Rank - 1, current.File + 1));
                 current = new Position(current.Rank - 1, current.File + 1);
             }
-            //2,3
-
             current = _position;
             while (BoardUtils.IsOnBoard(current.Rank - 1, current.File - 1))
             {
                 possibleMoves.Add(new Position(current.Rank - 1, current.File - 1));
                 current = new Position(current.Rank - 1, current.File - 1);
             }
-            //4,2
+            current = _position;
+            while (BoardUtils.IsOnBoard(current.Rank + 1, current.File))
+            {
+                possibleMoves.Add(new Position(current.Rank + 1, current.File));
+                current = new Position(current.Rank + 1, current.File);
+
+            }
+            current = _position;
+            while (BoardUtils.IsOnBoard(current.Rank - 1, current.File))
+            {
+                possibleMoves.Add(new Position(current.Rank - 1, current.File));
+                current = new Position(current.Rank - 1, current.File);
+            }
+
+            current = _position;
+            while (BoardUtils.IsOnBoard(current.Rank, current.File + 1))
+            {
+                possibleMoves.Add(new Position(current.Rank, current.File + 1));
+                current = new Position(current.Rank, current.File + 1);
+            }
+            current = _position;
+            while (BoardUtils.IsOnBoard(current.Rank, current.File - 1))
+            {
+                possibleMoves.Add(new Position(current.Rank, current.File - 1));
+                current = new Position(current.Rank, current.File - 1);
+            }
             current = _position;
             while (BoardUtils.IsOnBoard(current.Rank + 1, current.File - 1))
             {
@@ -67,7 +83,6 @@
             }
 
             return possibleMoves;
-
         }
     }
 }
