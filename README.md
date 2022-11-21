@@ -3,6 +3,8 @@ CLI chess. Ideally should be able to take an algebraic notation set and recreate
 
 Ideally this becomes an engine and follows the Shredder Chess API found below
 
+Not sure how long this will take
+
 ```
 Description of the universal chess interface (UCI)    April  2006
 =================================================================
