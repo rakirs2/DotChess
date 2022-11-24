@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("CSharpChessTests")]
+[assembly: InternalsVisibleTo("DotChessTests")]
 
 //TODO.Srikar switch movement to template method
 namespace CSharpChess.Models.Pieces

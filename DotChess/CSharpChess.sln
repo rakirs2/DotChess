@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpChess", "CSharpChess.csproj", "{F6EF736C-7C2C-40D0-9413-98A3E78B83E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpChessTests", "..\CSharpChessTests\CSharpChessTests.csproj", "{4034520C-B36D-4958-B9CD-ADA08D7AEBF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotChessTests", "..\DotChessTests\DotChessTests.csproj", "{4034520C-B36D-4958-B9CD-ADA08D7AEBF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
