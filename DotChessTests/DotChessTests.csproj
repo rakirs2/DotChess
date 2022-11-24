@@ -7,7 +7,7 @@
 
 		<IsPackable>false</IsPackable>
 
-		<RootNamespace>CSharpChessTests</RootNamespace>
+		<RootNamespace>DotChessTests</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
