@@ -15,4 +15,10 @@
     <None Remove="Pieces\" />
     <None Remove="Models\PieceTracker\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\README.md">
+      <Link>README.md</Link>
+    </Content>
+  </ItemGroup>
 </Project>
