@@ -1,5 +1,4 @@
-﻿using CSharpChess.Models;
-using CSharpChess.Models.Pieces;
+﻿using CSharpChess.Models.Pieces;
 using DotChess.Models;
 using DotChess.Models.Pieces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,8 +8,11 @@ namespace DotChessTests.Models.ChessBoard;
 [TestClass]
 public class ChessBoardTests
 {
-    private Random _random =new();
+    private const int NumberOfRanks = 7;
+    private const int NumberOfFiles = 7;
     private readonly HashSet<Position> _positions = new();
+    private Random _random = new();
+
     [TestInitialize]
     public void Setup()
     {
@@ -19,9 +21,10 @@ public class ChessBoardTests
 
     [TestCleanup]
     public void TearDown()
-    { 
+    {
         _positions.Clear();
     }
+
     [TestMethod]
     public void GetOccupiedPositionsTest()
     {
@@ -44,7 +47,6 @@ public class ChessBoardTests
     [TestMethod]
     public void TwoPiecesOnBoard()
     {
-        
         var pieceTracker = new CSharpChess.Models.PieceTracker.ChessBoard();
         var position1 = GenerateUniqueTestPosition();
         var blackKing = new King(Color.Black, position1);
@@ -63,13 +65,8 @@ public class ChessBoardTests
     {
         var currentPosition = new Position(_random.Next(NumberOfRanks), _random.Next(NumberOfFiles));
         while (_positions.Contains(currentPosition))
-        {
             currentPosition = new Position(_random.Next(NumberOfRanks), _random.Next(NumberOfFiles));
-        }
         _positions.Add(currentPosition);
         return currentPosition;
     }
-
-    private const int NumberOfRanks = 7;
-    private const int NumberOfFiles = 7;
 }

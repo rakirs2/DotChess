@@ -1,5 +1,4 @@
-﻿using CSharpChess.Models;
-using CSharpChess.Models.Pieces;
+﻿using CSharpChess.Models.Pieces;
 
 namespace DotChess.Models.Pieces;
 

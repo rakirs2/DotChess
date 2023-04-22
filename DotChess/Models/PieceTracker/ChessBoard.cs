@@ -28,10 +28,7 @@ public class ChessBoard : IPieceTracker
 
     public bool AddPiece(Position position, IPiece piece)
     {
-        if (Pieces.ContainsKey(position))
-        {
-            return false;
-        }
+        if (Pieces.ContainsKey(position)) return false;
 
         Pieces.Add(position, piece);
         return true;

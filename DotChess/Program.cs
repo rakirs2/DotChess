@@ -1,3 +1,3 @@
 ﻿using Console = DotChess.Console;
 
-Console console = new DotChess.Console();
+var console = new Console();
