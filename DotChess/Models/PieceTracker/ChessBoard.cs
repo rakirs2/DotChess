@@ -3,10 +3,10 @@ using CSharpChess.PieceTracker;
 
 namespace CSharpChess.Models.PieceTracker;
 
-public class PieceTracker : IPieceTracker
+public class ChessBoard : IPieceTracker
 
 {
-    public PieceTracker()
+    public ChessBoard()
     {
         Pieces = new Dictionary<Position, IPiece>();
     }

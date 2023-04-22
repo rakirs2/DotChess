@@ -1,6 +1,6 @@
 ﻿namespace CSharpChess.Models.Pieces;
 
-public class Bishop : IPiece
+internal class Bishop : Piece
 {
     private readonly Color _color;
     private readonly PieceType _pieceType;

@@ -1,6 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CSharpChess.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpChess.Models.Tests;
+namespace DotChessTests.Models;
 
 [TestClass]
 public class PositionTests

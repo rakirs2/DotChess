@@ -3,7 +3,7 @@ using CSharpChess.Models.Pieces;
 
 namespace CSharpChess.Pieces;
 
-public class King : IPiece
+internal class King : Piece
 {
     private readonly Color _color;
     private readonly PieceType _pieceType;
