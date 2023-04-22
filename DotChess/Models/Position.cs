@@ -7,8 +7,10 @@ public class Position
         if (BoardUtils.IsOnBoard(rank, file))
         {
             //horizontal lines
+            //numbers
             Rank = rank;
             //vertical lines
+            // 'letters
             File = file;
         }
         else
@@ -26,6 +28,9 @@ public class Position
         return false;
     }
 
+    /*
+     * Simple XOR Hash on the Position. Should be safe
+     */
     public override int GetHashCode()
     {
         return Rank ^ File;
