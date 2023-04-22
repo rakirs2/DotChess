@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using DotChess.Models;
 
 [assembly: InternalsVisibleTo("DotChessTests")]
 

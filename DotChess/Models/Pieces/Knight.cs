@@ -1,4 +1,7 @@
-﻿namespace CSharpChess.Models.Pieces;
+﻿using DotChess;
+using DotChess.Models;
+
+namespace CSharpChess.Models.Pieces;
 
 public class Knight : IPiece
 {

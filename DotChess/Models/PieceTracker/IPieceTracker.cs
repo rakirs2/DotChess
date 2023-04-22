@@ -1,7 +1,8 @@
 ﻿using CSharpChess.Models;
 using CSharpChess.Models.Pieces;
+using DotChess.Models;
 
-namespace CSharpChess.PieceTracker;
+namespace CSharpChess.Models.PieceTracker;
 
 public interface IPieceTracker
 {

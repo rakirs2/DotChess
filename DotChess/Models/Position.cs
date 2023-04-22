@@ -1,4 +1,4 @@
-﻿namespace CSharpChess.Models;
+﻿namespace DotChess.Models;
 
 public class Position
 {

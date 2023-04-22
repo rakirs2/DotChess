@@ -1,4 +1,5 @@
 ﻿using CSharpChess.Models;
+using DotChess.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DotChessTests.Models;

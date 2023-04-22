@@ -1,7 +1,7 @@
 ﻿using CSharpChess.Models;
 using CSharpChess.Models.Pieces;
 
-namespace CSharpChess.Pieces;
+namespace DotChess.Models.Pieces;
 
 internal class King : Piece
 {

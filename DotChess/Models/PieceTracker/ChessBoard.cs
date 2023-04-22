@@ -1,5 +1,5 @@
 ﻿using CSharpChess.Models.Pieces;
-using CSharpChess.PieceTracker;
+using DotChess.Models;
 
 namespace CSharpChess.Models.PieceTracker;
 

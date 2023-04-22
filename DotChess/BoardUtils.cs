@@ -1,6 +1,4 @@
-﻿using CSharpChess.PieceTracker;
-
-namespace CSharpChess;
+﻿namespace DotChess;
 
 internal static class BoardUtils
 {

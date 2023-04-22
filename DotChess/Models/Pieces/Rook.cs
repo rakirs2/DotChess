@@ -1,4 +1,7 @@
-﻿namespace CSharpChess.Models.Pieces;
+﻿using CSharpChess.Models;
+using CSharpChess.Models.Pieces;
+
+namespace DotChess.Models.Pieces;
 
 public class Rook : IPiece
 {

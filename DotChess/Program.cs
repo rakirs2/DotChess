@@ -1,1 +1,3 @@
-﻿Console.WriteLine("Let's play chess");
+﻿using Console = DotChess.Console;
+
+Console console = new DotChess.Console();
