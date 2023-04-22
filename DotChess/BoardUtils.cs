@@ -1,9 +1,11 @@
-﻿namespace CSharpChess;
+﻿using CSharpChess.PieceTracker;
+
+namespace CSharpChess;
 
 internal static class BoardUtils
 {
     internal static bool IsOnBoard(int rank, int file)
     {
-        return rank >= 0 && rank < 8 && file >= 0 && file < 8;
+        return rank is >= 0 and < 8 && file is >= 0 and < 8;
     }
 }

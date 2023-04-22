@@ -21,6 +21,11 @@ public class PieceTracker : IPieceTracker
         return positions;
     }
 
+    public bool IsOccupied(Position position)
+    {
+        return Pieces.ContainsKey(position);
+    }
+
     public bool AddPiece(Position position, IPiece piece)
     {
         if (Pieces.ContainsKey(position))

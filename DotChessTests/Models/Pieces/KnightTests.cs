@@ -2,7 +2,7 @@
 using CSharpChess.Models.Pieces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpChessTests.Models.Pieces;
+namespace DotChessTests.Models.Pieces;
 
 [TestClass]
 public class KnightTests
