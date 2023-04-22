@@ -6,10 +6,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CSharpChessTests.Models.Pieces;
 
 //TODO.Srikar implement with disposable?
-[TestClass()]
+[TestClass]
 public class KingTests
 {
-    [TestMethod()]
+    [TestMethod]
     public void KingTest()
     {
         King black = new(Color.Black, new Position(0, 0));
@@ -21,11 +21,11 @@ public class KingTests
         Assert.AreEqual(position, black.GetCurrentPosition());
     }
 
-    [TestMethod()]
+    [TestMethod]
     public void KingMiddleGetPossibleMoves()
     {
         King black = new(Color.Black, new Position(3, 3));
-        HashSet<Position> possibleMoves = black.GetPossibleMoves();
+        var possibleMoves = black.GetPossibleMoves();
         HashSet<Position> expectedMoves = new()
         {
             new Position(4, 3),
@@ -40,11 +40,11 @@ public class KingTests
         Assert.IsTrue(possibleMoves.SetEquals(expectedMoves));
     }
 
-    [TestMethod()]
+    [TestMethod]
     public void KingCorner()
     {
         King black = new(Color.Black, new Position(0, 0));
-        HashSet<Position> possibleMoves = black.GetPossibleMoves();
+        var possibleMoves = black.GetPossibleMoves();
         HashSet<Position> expectedMoves = new()
         {
             new Position(1, 0),
@@ -53,11 +53,12 @@ public class KingTests
         };
         Assert.IsTrue(possibleMoves.SetEquals(expectedMoves));
     }
-    [TestMethod()]
+
+    [TestMethod]
     public void KingEdge()
     {
         King black = new(Color.Black, new Position(4, 0));
-        HashSet<Position> possibleMoves = black.GetPossibleMoves();
+        var possibleMoves = black.GetPossibleMoves();
         HashSet<Position> expectedMoves = new()
         {
             new Position(5, 0),
@@ -65,9 +66,7 @@ public class KingTests
             new Position(4, 1),
             new Position(3, 1),
             new Position(3, 0)
-
         };
         Assert.IsTrue(possibleMoves.SetEquals(expectedMoves));
     }
-
 }

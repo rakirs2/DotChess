@@ -1,73 +1,74 @@
-﻿namespace CSharpChess.Models.Pieces
+﻿namespace CSharpChess.Models.Pieces;
+
+public class Bishop : IPiece
 {
-    public class Bishop : IPiece
+    private readonly Color _color;
+    private readonly PieceType _pieceType;
+    private readonly Position _position;
+
+    public Bishop(Color color, Position position)
     {
-        private readonly Color _color;
-        private readonly PieceType _pieceType;
-        private Position _position;
-        public Bishop(Color color, Position position)
+        _color = color;
+        _pieceType = PieceType.Bishop;
+        _position = position;
+    }
+
+    public Color GetColor()
+    {
+        return _color;
+    }
+
+    public Position GetCurrentPosition()
+    {
+        return _position;
+    }
+
+    public PieceType GetPieceType()
+    {
+        return _pieceType;
+    }
+
+    public HashSet<Position> GetPossibleMoves()
+    {
+        //TODO.Srikar these should honestly be template methods
+        var possibleMoves = new HashSet<Position>();
+        var current = _position;
+
+        //4,4
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank + 1, current.File + 1))
         {
-            _color = color;
-            _pieceType = PieceType.Bishop;
-            _position = position;
+            possibleMoves.Add(new Position(current.Rank + 1, current.File + 1));
+            current = new Position(current.Rank + 1, current.File + 1);
         }
-        public Color GetColor()
+
+        //3,4
+        current = _position;
+
+        //2,4
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank - 1, current.File + 1))
         {
-            return _color;
+            possibleMoves.Add(new Position(current.Rank - 1, current.File + 1));
+            current = new Position(current.Rank - 1, current.File + 1);
         }
+        //2,3
 
-        public Position GetCurrentPosition()
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank - 1, current.File - 1))
         {
-            return _position;
+            possibleMoves.Add(new Position(current.Rank - 1, current.File - 1));
+            current = new Position(current.Rank - 1, current.File - 1);
         }
 
-        public PieceType GetPieceType()
+        //4,2
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank + 1, current.File - 1))
         {
-            return _pieceType;
+            possibleMoves.Add(new Position(current.Rank + 1, current.File - 1));
+            current = new Position(current.Rank + 1, current.File - 1);
         }
 
-        public HashSet<Position> GetPossibleMoves()
-        {
-            //TODO.Srikar these should honestly be template methods
-            HashSet<Position> possibleMoves = new HashSet<Position>();
-            var current = _position;
-
-            //4,4
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank + 1, current.File + 1))
-            {
-                possibleMoves.Add(new Position(current.Rank + 1, current.File + 1));
-                current = new Position(current.Rank + 1, current.File + 1);
-
-            }
-            //3,4
-            current = _position;
-
-            //2,4
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank - 1, current.File + 1))
-            {
-                possibleMoves.Add(new Position(current.Rank - 1, current.File + 1));
-                current = new Position(current.Rank - 1, current.File + 1);
-            }
-            //2,3
-
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank - 1, current.File - 1))
-            {
-                possibleMoves.Add(new Position(current.Rank - 1, current.File - 1));
-                current = new Position(current.Rank - 1, current.File - 1);
-            }
-            //4,2
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank + 1, current.File - 1))
-            {
-                possibleMoves.Add(new Position(current.Rank + 1, current.File - 1));
-                current = new Position(current.Rank + 1, current.File - 1);
-            }
-
-            return possibleMoves;
-
-        }
+        return possibleMoves;
     }
 }

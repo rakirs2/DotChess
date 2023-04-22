@@ -3,35 +3,36 @@
 [assembly: InternalsVisibleTo("DotChessTests")]
 
 //TODO.Srikar switch movement to template method
-namespace CSharpChess.Models.Pieces
+namespace CSharpChess.Models.Pieces;
+
+public interface IPiece
 {
-    public interface IPiece
-    {
-        //Files go vertical; ranks go horizontal. For now, treating it as 0-7
-        PieceType GetPieceType();
-        Color GetColor();
-        //The default is vertical clockwise
-        HashSet<Position> GetPossibleMoves();
-        Position GetCurrentPosition();
+    //Files go vertical; ranks go horizontal. For now, treating it as 0-7
+    PieceType GetPieceType();
 
-    }
-    public enum Color
-    {
-        Black,
-        White
-    }
+    Color GetColor();
 
-    public enum PieceType
-    {
-        King,
-        //TODO.Srikar Queen
-        Queen,
-        Rook,
-        Bishop,
-        Knight,
-        //TODO.Srikar Pawn
-        Pawn
-
-    }
+    //The default is vertical clockwise
+    HashSet<Position> GetPossibleMoves();
+    Position GetCurrentPosition();
 }
 
+public enum Color
+{
+    Black,
+    White
+}
+
+public enum PieceType
+{
+    King,
+
+    //TODO.Srikar Queen
+    Queen,
+    Rook,
+    Bishop,
+    Knight,
+
+    //TODO.Srikar Pawn
+    Pawn
+}

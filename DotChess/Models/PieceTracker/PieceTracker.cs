@@ -1,41 +1,34 @@
 ﻿using CSharpChess.Models.Pieces;
 using CSharpChess.PieceTracker;
 
-namespace CSharpChess.Models.PieceTracker
+namespace CSharpChess.Models.PieceTracker;
+
+public class PieceTracker : IPieceTracker
+
 {
-    public class PieceTracker : IPieceTracker
-
+    public PieceTracker()
     {
-        private Dictionary<Position, IPiece> Pieces { get; }
+        Pieces = new Dictionary<Position, IPiece>();
+    }
 
-        public PieceTracker()
+    private Dictionary<Position, IPiece> Pieces { get; }
+
+
+    public HashSet<Position> GetOccupiedPositions()
+    {
+        var positions = new HashSet<Position>();
+        foreach (var piece in Pieces) positions.Add(piece.Key);
+        return positions;
+    }
+
+    public bool AddPiece(Position position, IPiece piece)
+    {
+        if (Pieces.ContainsKey(position))
         {
-            Pieces = new Dictionary<Position, IPiece>();
+            return false;
         }
 
-
-        public HashSet<Position> GetOccupiedPositions()
-        {
-            HashSet<Position> positions = new HashSet<Position>();
-            foreach (var piece in Pieces)
-            {
-                positions.Add(piece.Key);
-            }
-            return positions;
-        }
-
-        public bool AddPiece(Position position, IPiece piece)
-        {
-            if (Pieces.ContainsKey(position))
-            {
-                return false;
-            }
-            else
-            {
-                Pieces.Add(position, piece);
-                return true;
-            }
-        }
-
+        Pieces.Add(position, piece);
+        return true;
     }
 }

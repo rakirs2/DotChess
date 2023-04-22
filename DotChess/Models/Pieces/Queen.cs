@@ -1,88 +1,93 @@
-﻿namespace CSharpChess.Models.Pieces
+﻿namespace CSharpChess.Models.Pieces;
+
+public class Queen : IPiece
 {
-    public class Queen : IPiece
+    private readonly Color _color;
+    private readonly PieceType _pieceType;
+    private readonly Position _position;
+
+    public Queen(Color color, Position position)
     {
-        private readonly Color _color;
-        private readonly PieceType _pieceType;
-        private Position _position;
-        public Queen(Color color, Position position)
+        _color = color;
+        _pieceType = PieceType.Queen;
+        _position = position;
+    }
+
+    public Color GetColor()
+    {
+        return _color;
+    }
+
+    public Position GetCurrentPosition()
+    {
+        return _position;
+    }
+
+    public PieceType GetPieceType()
+    {
+        return _pieceType;
+    }
+
+    public HashSet<Position> GetPossibleMoves()
+    {
+        var possibleMoves = new HashSet<Position>();
+        var current = _position;
+
+        while (BoardUtils.IsOnBoard(current.Rank + 1, current.File + 1))
         {
-            _color = color;
-            _pieceType = PieceType.Queen;
-            _position = position;
+            possibleMoves.Add(new Position(current.Rank + 1, current.File + 1));
+            current = new Position(current.Rank + 1, current.File + 1);
         }
-        public Color GetColor()
+
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank - 1, current.File + 1))
         {
-            return _color;
+            possibleMoves.Add(new Position(current.Rank - 1, current.File + 1));
+            current = new Position(current.Rank - 1, current.File + 1);
         }
 
-        public Position GetCurrentPosition()
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank - 1, current.File - 1))
         {
-            return _position;
+            possibleMoves.Add(new Position(current.Rank - 1, current.File - 1));
+            current = new Position(current.Rank - 1, current.File - 1);
         }
 
-        public PieceType GetPieceType()
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank + 1, current.File))
         {
-            return _pieceType;
+            possibleMoves.Add(new Position(current.Rank + 1, current.File));
+            current = new Position(current.Rank + 1, current.File);
         }
 
-        public HashSet<Position> GetPossibleMoves()
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank - 1, current.File))
         {
-            HashSet<Position> possibleMoves = new HashSet<Position>();
-            var current = _position;
-            
-            while (BoardUtils.IsOnBoard(current.Rank + 1, current.File + 1))
-            {
-                possibleMoves.Add(new Position(current.Rank + 1, current.File + 1));
-                current = new Position(current.Rank + 1, current.File + 1);
-
-            }
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank - 1, current.File + 1))
-            {
-                possibleMoves.Add(new Position(current.Rank - 1, current.File + 1));
-                current = new Position(current.Rank - 1, current.File + 1);
-            }
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank - 1, current.File - 1))
-            {
-                possibleMoves.Add(new Position(current.Rank - 1, current.File - 1));
-                current = new Position(current.Rank - 1, current.File - 1);
-            }
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank + 1, current.File))
-            {
-                possibleMoves.Add(new Position(current.Rank + 1, current.File));
-                current = new Position(current.Rank + 1, current.File);
-
-            }
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank - 1, current.File))
-            {
-                possibleMoves.Add(new Position(current.Rank - 1, current.File));
-                current = new Position(current.Rank - 1, current.File);
-            }
-
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank, current.File + 1))
-            {
-                possibleMoves.Add(new Position(current.Rank, current.File + 1));
-                current = new Position(current.Rank, current.File + 1);
-            }
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank, current.File - 1))
-            {
-                possibleMoves.Add(new Position(current.Rank, current.File - 1));
-                current = new Position(current.Rank, current.File - 1);
-            }
-            current = _position;
-            while (BoardUtils.IsOnBoard(current.Rank + 1, current.File - 1))
-            {
-                possibleMoves.Add(new Position(current.Rank + 1, current.File - 1));
-                current = new Position(current.Rank + 1, current.File - 1);
-            }
-
-            return possibleMoves;
+            possibleMoves.Add(new Position(current.Rank - 1, current.File));
+            current = new Position(current.Rank - 1, current.File);
         }
+
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank, current.File + 1))
+        {
+            possibleMoves.Add(new Position(current.Rank, current.File + 1));
+            current = new Position(current.Rank, current.File + 1);
+        }
+
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank, current.File - 1))
+        {
+            possibleMoves.Add(new Position(current.Rank, current.File - 1));
+            current = new Position(current.Rank, current.File - 1);
+        }
+
+        current = _position;
+        while (BoardUtils.IsOnBoard(current.Rank + 1, current.File - 1))
+        {
+            possibleMoves.Add(new Position(current.Rank + 1, current.File - 1));
+            current = new Position(current.Rank + 1, current.File - 1);
+        }
+
+        return possibleMoves;
     }
 }

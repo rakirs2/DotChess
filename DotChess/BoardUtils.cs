@@ -1,10 +1,9 @@
-﻿namespace CSharpChess
+﻿namespace CSharpChess;
+
+internal static class BoardUtils
 {
-    internal static class BoardUtils
+    internal static bool IsOnBoard(int rank, int file)
     {
-        internal static bool IsOnBoard(int rank, int file)
-        {
-            return rank >= 0 && rank < 8 && file >= 0 && file < 8;
-        }
+        return rank >= 0 && rank < 8 && file >= 0 && file < 8;
     }
 }
